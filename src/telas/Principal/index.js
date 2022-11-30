@@ -1,14 +1,18 @@
 import { Text, View, FlatList, StatusBar, TouchableOpacity } from 'react-native';
 import { Produto } from '../../componentes/Produto';
 import { produtos } from './produtos';
-import { estilo } from './estilos';
+import { estilos } from './estilos';
 import { Feather } from 'react-native-vector-icons'
 import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
+import { TemaContext } from '../../contexts/TemaContext';
+import { useContext } from 'react';
 
 
 export default function Principal({navigation}) {
   const ultimosVistos = []
 
+  const { temaEscolhido } = useContext(TemaContext);
+  const estilo = estilos(temaEscolhido)
   return (
     <View style={estilo.container}>
       <StatusBar />
