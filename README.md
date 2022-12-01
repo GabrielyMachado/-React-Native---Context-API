@@ -66,7 +66,6 @@ $ json-server --watch --host 192.168.15.43 db.json
 
 
 
-Espero que você utilize ao máximo deste projeto para se aprimorar! E se quiser dar um salve, estou lá no LinkedIn [André Oliveira Cunha](https://www.linkedin.com/in/andr%C3%A9-oliveira-cunha-b26b3a156/). :wave: 
 
 [nodejs]: https://nodejs.org/
 [expo]: https://docs.expo.dev/
