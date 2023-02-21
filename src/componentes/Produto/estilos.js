@@ -47,6 +47,14 @@ export const estilos = new StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  botaoRemover: {
+    backgroundColor: "#F34343",
+    width: 28,
+    height: 28,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   botaoTexto: {
     color: "#FFFFFF",
     fontSize: 20,

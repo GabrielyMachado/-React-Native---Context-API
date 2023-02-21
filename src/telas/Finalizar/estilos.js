@@ -6,67 +6,7 @@ export const estilos = (tema) => {
     container: {
       flex: 1,
       backgroundColor: tema.fundo,
-      alignItems: 'stretch',
-      justifyContent: 'center',
-    },
-    tituloArea: {
-      width: '100%',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      flexDirection: 'row',
-      paddingTop: Constants.statusBarHeight,
-      marginBottom: 16,
-    },
-    titulo: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      color: tema.titulo,
-    },
-    lista: {
-      flex: 1,
-      width: '100%',
-    },
-    ultimosVistos: {
-      marginBottom: 16,
-      paddingVertical: 16,
-      backgroundColor: tema.ultimosVistos,
-    },
-    tituloUltimosVistos: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: tema.titulo,
-      marginHorizontal: 16,
-      marginBottom: 8,
-    },
-    carrinhoArea: {
-      flexDirection: 'row',
-      alignItems: 'flex-end',
-      justifyContent: 'flex-end',
-    },
-    carrinhoIcon: {
-      fontSize: 30,
-      fontWeight: 'bold',
-      color: tema.titulo,
-    },
-    carrinhoQuantidadeArea: {
-      backgroundColor: 'red',
-      borderRadius: 10,
-      width: 20,
-      height: 20,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    carrinhoQuantidade: {
-      fontSize: 12,
-      fontWeight: 'bold',
-      color: "#fff",
-    },
-    iconArea: {
-      marginLeft: 16,
-    },
-    icon: {
-      color: tema.texto,
-      fontSize: 30,
+      flexDirection: 'column'
     },
     botao: {
       margin: 16,
@@ -74,6 +14,7 @@ export const estilos = (tema) => {
       paddingVertical: 16,
       borderRadius: 10,
       backgroundColor: tema.botao,
+      marginTop: 'auto'
     },
     textoBotao: {
       fontSize: 18,
@@ -81,5 +22,36 @@ export const estilos = (tema) => {
       color: tema.preto,
       textAlign: 'center'
     },
+    informacoesEntregaArea: {
+      alignItems: "flex-start",
+      minWidth: 250,
+      marginTop: 16,
+      marginHorizontal: 16,
+      marginVertical: 8,
+      padding: 16,
+      backgroundColor: tema.cinza,
+      borderRadius: 10,
+      shadowColor: "#000",
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
+    },
+    informacoesExtraArea: {
+      alignItems: "flex-start",
+      minWidth: 250,
+      padding: 16,
+    },
+    informacoesEntregaTitulo: {
+      fontSize: 28,
+      fontWeight: 'bold',
+      color: tema.titulo,
+      marginBottom: 16,
+
+    },
+    informacoesTexto: {
+      fontSize: 18,
+      color: tema.titulo,
+    }
+
   })
 };

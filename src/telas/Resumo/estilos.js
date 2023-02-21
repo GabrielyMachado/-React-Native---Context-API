@@ -7,7 +7,6 @@ export const estilos = (tema) => {
       flex: 1,
       backgroundColor: tema.fundo,
       alignItems: 'stretch',
-      justifyContent: 'center',
     },
     tituloArea: {
       width: '100%',
@@ -81,5 +80,15 @@ export const estilos = (tema) => {
       color: tema.preto,
       textAlign: 'center'
     },
+    mensagemArea:{
+      justifyContent: 'space-evenly',
+      flex: 1
+    },
+    mensagemTexto:{
+      alignItems: 'center',
+      fontSize: 24,
+      color: tema.branco,
+      textAlign: 'center'
+    }
   })
 };

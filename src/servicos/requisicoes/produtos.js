@@ -23,3 +23,13 @@ export async function pegarProdutos (){
     }
     
 }
+
+export async function deletarProduto (id){
+    try{
+        await api.delete(`/produtos/${id}`);
+    }
+    catch(error){
+        console.error(error);
+    }
+    
+}

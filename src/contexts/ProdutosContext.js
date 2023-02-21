@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { pegarProdutos, salvarProduto } from '../servicos/requisicoes/produtos';
+import { pegarProdutos, salvarProduto, deletarProduto  } from '../servicos/requisicoes/produtos';
 
 export const ProdutosContext = createContext({});
 
@@ -25,13 +25,28 @@ export function ProdutosProvider( {children}) {
         novoUltimosVistos.add(produto);
         setUltimosVistos([...novoUltimosVistos]);
     }
+
+    async function removeProduto(id) {
+        deletarProduto(id);
+        const resultado = await pegarProdutos();
+        setCarrinho(resultado);
+        setQuantidade(resultado.length);
+    }
+
+    async function limpaCarrinho() {
+        carrinho.forEach((item) => deletarProduto(item.id))
+        setQuantidade(0);
+        setCarrinho([]);
+    }
     
     return (
         <ProdutosContext.Provider value={{
             quantidade,
             carrinho,
             ultimosVistos,
-            viuProduto
+            viuProduto,
+            limpaCarrinho,
+            removeProduto
         }}>
             {children}
         </ProdutosContext.Provider>

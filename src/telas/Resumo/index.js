@@ -16,7 +16,7 @@ export default function Resumo({navigation}) {
   const { usuario } = useContext(AutenticacaoContext);
   const { 
     quantidade,
-    carrinho 
+    carrinho
   } = useContext(ProdutosContext);
 
   return (
@@ -37,17 +37,26 @@ export default function Resumo({navigation}) {
         </View>
       </View>
 
-      <FlatList
-        data={carrinho}
-        keyExtractor={item => Math.random()}
-        renderItem={({ item }) => <Produto item={item} adicionar={false} />}
-        style={estilo.lista}
-        showsVerticalScrollIndicator={false}
-      />
+      {quantidade > 0 ? 
+      <>
+        <FlatList
+          data={carrinho}
+          keyExtractor={item => Math.random()}
+          renderItem={({ item }) => <Produto item={item} adicionar={false} remover={true} />}
+          style={estilo.lista}
+          showsVerticalScrollIndicator={false}
+        />
 
-      <TouchableOpacity style={estilo.botao} onPress={ () => navigation.navigate('Finalizar')}>
-        <Text style={estilo.textoBotao}> Finalizar</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={estilo.botao} onPress={ () => navigation.navigate('Finalizar')}>
+          <Text style={estilo.textoBotao}> Finalizar</Text>
+        </TouchableOpacity>
+      
+      </>
+      : <>
+      <View style={estilo.mensagemArea}>
+        <Text style={estilo.mensagemTexto}> Seu carrinho está vazio =(</Text>
+      </View>
+      </> }
     </View>
   );
 }

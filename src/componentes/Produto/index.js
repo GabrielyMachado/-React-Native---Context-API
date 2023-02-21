@@ -3,9 +3,10 @@ import { ProdutosContext } from '../../contexts/ProdutosContext';
 import { estilos } from './estilos';
 import { useContext } from 'react';
 
-export function Produto({ item, adicionar }) {
+export function Produto({ item, adicionar, remover = false }) {
   const { 
-    viuProduto
+    viuProduto,
+    removeProduto
   } = useContext(ProdutosContext);
 
   return (
@@ -19,6 +20,12 @@ export function Produto({ item, adicionar }) {
       <TouchableOpacity style={estilos.botaoAdicionar} onPress={() => {viuProduto(item)}}>
         <Text style={estilos.botaoTexto}>+</Text>
       </TouchableOpacity>}
+      { remover &&
+      <TouchableOpacity style={estilos.botaoRemover} onPress={() => {
+          removeProduto(item.id);
+
+        }}>
+        <Text style={estilos.botaoTexto}>-</Text>
+      </TouchableOpacity>}
     </View>
-  );
-}
+  );}
